@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useForm } from '@formspree/react';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -10,25 +11,11 @@ const ContactForm = () => {
         subject: '',
         message: '',
     });
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        // Simulate form submission
-        try {
-            // In real implementation, replace with actual API call
-            await new Promise((resolve) => setTimeout(resolve, 1500));
+    const [state, handleSubmit] = useForm("xdkeennd");
+    useEffect(() => {
+        if (state.succeeded) {
             setSubmitStatus('success');
             setFormData({
                 name: '',
@@ -36,12 +23,24 @@ const ContactForm = () => {
                 subject: '',
                 message: '',
             });
-        } catch (error: string | unknown) {
-            console.error('Error submitting form:', error);
-            setSubmitStatus('error');
-        } finally {
-            setIsSubmitting(false);
         }
+    }, [state]);
+
+    useEffect(() => {
+        if (submitStatus) {
+            const timer = setTimeout(() => {
+                setSubmitStatus(null);
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [submitStatus]);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
     };
 
     const inputClasses = `w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600`;
