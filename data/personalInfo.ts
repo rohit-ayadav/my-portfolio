@@ -36,7 +36,7 @@ export const projects: Project[] = [
         description: "A full-stack blogging platform with authentication, role-based access, and a rich-text editor. Hosts 100+ blogs with 5K+ active users, increasing engagement by 70%. Features AI-powered SEO, custom URLs, and efficient MongoDB implementation.",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Markdown"],
         imageUrl: "/projects/devblogger.jpg",
-        githubUrl: "https://github.com/rohit-k-yadav/devblogger",
+        githubUrl: "https://github.com/rohit-ayadav/devblogger",
         liveUrl: "https://devlogger.in",
     },
     {
@@ -45,8 +45,8 @@ export const projects: Project[] = [
         description: "A community-driven platform connecting 500+ CSE students and professionals. Features an admin dashboard with role-based authentication and newsletter management. Boosted student mentorship requests by 30% through structured networking.",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
         imageUrl: "/projects/community.jpg",
-        githubUrl: "https://github.com/rohit-k-yadav/community-website",
-        liveUrl: "https://community-website.vercel.app",
+        githubUrl: "https://github.com/rohit-ayadav/Community-Resources-and-Updates1",
+        liveUrl: "https://resourcesandcarrier.online/",
     },
     {
         id: 3,
@@ -54,8 +54,8 @@ export const projects: Project[] = [
         description: "URL shortener handling 61K+ redirects with integrated Razorpay for paid subscriptions and digital product sales. Features secure content access, accelerated API response time, and real-time analytics dashboard.",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Razorpay"],
         imageUrl: "/projects/rushort.jpg",
-        githubUrl: "https://github.com/rohit-k-yadav/rushort",
-        liveUrl: "https://rushort.vercel.app",
+        githubUrl: "https://github.com/rohit-ayadav/url-shortener2025",
+        liveUrl: "https://rushort.site",
     },
 ];
 
