@@ -13,16 +13,16 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
-        // Check user preference for dark mode
+
         const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
         setDarkMode(isDarkPreferred);
 
-        // Add listener for theme changes
+
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         const handleChange = (e: MediaQueryListEvent) => setDarkMode(e.matches);
         mediaQuery.addEventListener('change', handleChange);
 
-        // Clean up
+
         return () => {
             mediaQuery.removeEventListener('change', handleChange);
         };
@@ -43,7 +43,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     );
 }
 
-// Custom hook to use the theme context
 export function useTheme() {
     const context = useContext(ThemeContext);
     if (context === undefined) {

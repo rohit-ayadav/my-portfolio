@@ -58,7 +58,7 @@ const ContactSection = ({ personalInfo }: ContactSectionProps) => {
                                 <div>
                                     <p className="text-sm text-gray-500 dark:text-gray-400">GitHub</p>
                                     <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
-                                        github.com/rohit-k-yadav
+                                        github.com/rohit-ayadav
                                     </a>
                                 </div>
                             </div>

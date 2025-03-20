@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
+import { ArrowUpIcon } from 'lucide-react';
 
 const Footer = () => {
-    // Replace with your actual information
     const personalInfo = {
         name: "Rohit Kumar Yadav",
         role: "Full Stack Developer | Next.js Specialist",
-        email: "rohit.yadav@example.com",
-        github: "https://github.com/rohit-k-yadav",
-        linkedin: "https://linkedin.com/in/rohit-kumar-yadav",
+        email: "rohitkuyada@gmail.com",
+        github: "https://github.com/rohit-ayadav",
+        linkedin: "https://www.linkedin.com/in/rohitkumaryadav-rky/",
     };
 
     const currentYear = new Date().getFullYear();
@@ -68,18 +68,15 @@ const Footer = () => {
                     <p>&copy; {currentYear} {personalInfo.name}. All rights reserved.</p>
                     <p className="mt-2 text-sm">Built with Next.js and Tailwind CSS</p>
 
-                    {/* Back to top button */}
-                    <div className="flex justify-center mt-6">
-                        <a
-                            href="#"
-                            className="inline-flex items-center justify-center p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
-                            aria-label="Back to top"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                            </svg>
-                        </a>
+                    {/* Back to top button, fixed to bottom right */}
+                    <div className="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-105"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        aria-label="Back to top"
+                    >
+                        <ArrowUpIcon className="h-6 w-6" />
                     </div>
+
+
                 </div>
             </div>
         </footer>
