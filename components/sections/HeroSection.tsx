@@ -87,7 +87,8 @@ const HeroSection = ({ isLoaded, personalInfo }: HeroSectionProps) => {
                 >
                     <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-2xl hover:shadow-blue-600/50 dark:hover:shadow-blue-400/50 transition-shadow duration-300">
                         <Image
-                            src="/profile.jpg"
+                            // src="/profile.jpg"
+                            src={'/profile.png'}
                             alt={personalInfo.name}
                             fill
                             style={{ objectFit: 'cover' }}
