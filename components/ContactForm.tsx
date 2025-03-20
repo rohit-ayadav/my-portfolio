@@ -14,6 +14,7 @@ const ContactForm = () => {
     const [isSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
     const [state, handleSubmit] = useForm("xdkeennd");
+    
     useEffect(() => {
         if (state.succeeded) {
             setSubmitStatus('success');
@@ -25,16 +26,7 @@ const ContactForm = () => {
             });
         }
     }, [state]);
-
-    useEffect(() => {
-        if (submitStatus) {
-            const timer = setTimeout(() => {
-                setSubmitStatus(null);
-            }, 5000);
-            return () => clearTimeout(timer);
-        }
-    }, [submitStatus]);
-
+    
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
