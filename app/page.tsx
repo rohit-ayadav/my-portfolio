@@ -10,22 +10,14 @@ import AchievementsSection from '@/components/sections/AchievementsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import { personalInfo } from '@/data/personalInfo';
 import Footer from '@/components/layout/Footer';
+import { useTheme } from '@/providers/ThemeProvider';
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const { darkMode, toggleDarkMode } = useTheme();
 
   useEffect(() => {
-    // Check user preference for dark mode
-    const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setDarkMode(isDarkPreferred);
-
-    // Add listener for theme changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e: MediaQueryListEvent) => setDarkMode(e.matches);
-    mediaQuery.addEventListener('change', handleChange);
-
     setIsLoaded(true);
 
     // Intersection Observer for sections
@@ -47,15 +39,10 @@ export default function Home() {
 
     // Clean up
     return () => {
-      mediaQuery.removeEventListener('change', handleChange);
       observer.disconnect();
     };
   }, []);
 
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   return (
     <div className={darkMode ? 'dark' : ''}>
