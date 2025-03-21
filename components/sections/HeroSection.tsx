@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PersonalInfo } from '@/types';
+import { Book, BookOpen, ContactRound } from 'lucide-react';
 
 interface HeroSectionProps {
     isLoaded: boolean;
@@ -64,6 +65,7 @@ const HeroSection = ({ isLoaded, personalInfo }: HeroSectionProps) => {
                             View Projects
                         </Link>
                         <Link href="#contact" className="px-6 py-3 border-2 border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 font-medium rounded-lg transition-colors transform hover:scale-105 duration-300">
+                            {/* <ContactRound className="h-5 w-5 mr-2" /> */}
                             Contact Me
                         </Link>
                         <a
@@ -77,6 +79,16 @@ const HeroSection = ({ isLoaded, personalInfo }: HeroSectionProps) => {
                             </svg>
                             Resume
                         </a>
+                        {/* Link for Blogs */}
+                        <Link
+                            href={`https://devblogger.in/author/rohit.ayadav/`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-6 py-3 bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-medium rounded-lg transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 duration-300 flex items-center"
+                        >
+                            <BookOpen className="h-5 w-5 mr-2" />
+                            Blogs
+                        </Link>
                     </motion.div>
                 </motion.div>
                 <motion.div
