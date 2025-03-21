@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { MdEmail } from 'react-icons/md';
+import { useForm } from '@formspree/react';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -13,35 +15,33 @@ const ContactForm = () => {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
+    const [state, handleSubmit] = useForm("xdkeennd");
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
-
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitStatus('idle');
 
         try {
-            // Replace with your actual form submission logic
-            await new Promise(resolve => setTimeout(resolve, 1500)); // Simulating API call
-
-            // If successful:
+            await handleSubmit(e);
             setSubmitStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' });
-
-            // Reset status after 5 seconds
-            setTimeout(() => setSubmitStatus('idle'), 5000);
-        } catch {
+        } catch (error) {
             setSubmitStatus('error');
-            // Reset status after 5 seconds
-            setTimeout(() => setSubmitStatus('idle'), 5000);
         } finally {
             setIsSubmitting(false);
         }
     };
+    useEffect(() => {
+        if (state.succeeded) {
+            setTimeout(() => {
+                setSubmitStatus('idle');
+            }, 5000);
+        }
+    }, [state.succeeded]);
 
     return (
         <motion.div
@@ -65,7 +65,8 @@ const ContactForm = () => {
                 </div>
             )}
 
-            <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}> */}
+            <form onSubmit={handleFormSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -79,7 +80,8 @@ const ContactForm = () => {
                             onChange={handleChange}
                             required
                             className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
-                            placeholder="John Doe"
+                            placeholder="Mr. Cooper"
+                            autoComplete='name'
                         />
                     </div>
                     <div>
@@ -94,7 +96,8 @@ const ContactForm = () => {
                             onChange={handleChange}
                             required
                             className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
-                            placeholder="john@example.com"
+                            placeholder="mr.cooper@devblogger.in"
+                            autoComplete='email'
                         />
                     </div>
                 </div>
@@ -148,9 +151,7 @@ const ContactForm = () => {
                             </>
                         ) : (
                             <>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
+                                <MdEmail className="mr-2" />
                                 Send Message
                             </>
                         )}
