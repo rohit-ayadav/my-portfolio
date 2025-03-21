@@ -28,6 +28,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
+        alert('It is a paid feature. Please subscribe to unlock this feature.');
     };
 
     useEffect(() => {
