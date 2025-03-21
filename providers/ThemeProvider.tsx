@@ -13,15 +13,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
-
+        // Check if the user has a preferred color scheme
         const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
         setDarkMode(isDarkPreferred);
-
 
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         const handleChange = (e: MediaQueryListEvent) => setDarkMode(e.matches);
         mediaQuery.addEventListener('change', handleChange);
-
 
         return () => {
             mediaQuery.removeEventListener('change', handleChange);
@@ -31,6 +29,15 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
     };
+
+    useEffect(() => {
+        // update the theme when darkMode changes
+        if (darkMode) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [darkMode]);
 
     return (
         <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
