@@ -28,7 +28,7 @@ const ProjectsSection = () => {
                     viewport={{ once: true }}
                 >
                     <a
-                        href="https://github.com/rohit-ayadav/"
+                        href="https://github.com/rohit-ayadav?tab=repositories"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center px-6 py-3 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-105"
