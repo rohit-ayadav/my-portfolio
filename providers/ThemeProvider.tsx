@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useState, useEffect, useContext, ReactNode } from "react";
+import { toast } from "sonner";
 
 type ThemeContextType = {
     darkMode: boolean;
@@ -10,7 +11,7 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
 
     useEffect(() => {
         // Check if the user has a preferred color scheme
@@ -27,8 +28,20 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }, []);
 
     const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-        alert('It is a paid feature. Please subscribe to unlock this feature.');
+        toast("Paid Feature", {
+            description: "Toggling dark mode is available only for subscribers.",
+            action: {
+                label: "Contact",
+                onClick: () => {
+                    const phoneNumber = "916392177974";
+                    const message = encodeURIComponent(
+                        "Hello, I am interested in unlocking the paid feature (Dark Mode) on your portfolio. Please share the subscription details."
+                    );
+                    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+                },
+            },
+        });
+        // setDarkMode(!darkMode);
     };
 
     useEffect(() => {
