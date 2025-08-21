@@ -19,7 +19,8 @@ export const skills: TechSkill[] = [
     { name: "HTML/CSS", level: 65, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     { name: "Tailwind CSS", level: 60, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
     { name: "Node.js", level: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    { name: "Express", level: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    { name: "Express", level: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    
     { name: "MongoDB", level: 65, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
     { name: "PostgreSQL", level: 60, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
     { name: "Git", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
@@ -37,7 +38,7 @@ export const projects: Project[] = [
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Markdown"],
         imageUrl: "/projects/devblogger.jpg",
         githubUrl: "https://github.com/rohit-ayadav/devblogger",
-        liveUrl: "https://devlogger.in",
+        liveUrl: "https://devblogger.in",
     },
     {
         id: 2,
