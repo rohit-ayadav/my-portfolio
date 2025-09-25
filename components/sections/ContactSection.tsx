@@ -3,12 +3,9 @@
 import { PersonalInfo } from '@/types';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ContactForm from '@/components/ui/ContactForm';
+import { personalInfo } from '@/data/personalInfo';
 
-interface ContactSectionProps {
-    personalInfo: PersonalInfo;
-}
-
-const ContactSection = ({ personalInfo }: ContactSectionProps) => {
+const ContactSection = () => {
     return (
         <section id="contact" className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 -mx-4 px-4 rounded-t-3xl">
             <div className="max-w-4xl mx-auto">

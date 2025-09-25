@@ -16,11 +16,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
 });
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rohit.devblogger.in"),
   title: "Rohit Kumar Yadav - Portfolio",
   description: "Showcasing my projects, blogs, and experience as a developer.",
-  keywords: ["Rohit Kumar Yadav", "developer", "Next.js", "DevBlogger", "React", "portfolio"],
+  keywords: [
+    "Rohit Kumar Yadav",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "React Developer",
+    "Portfolio",
+    "Blogs",
+    "JavaScript",
+    "TypeScript"
+  ],
   authors: [{ name: "Rohit Kumar Yadav", url: "https://rohit.devblogger.in" }],
   openGraph: {
     title: "Rohit Kumar Yadav - Portfolio",
@@ -39,8 +48,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@rohit.ayadav",
-    creator: "@rohit.ayadav",
+    site: "@rohit_ayadav", // ensure handle is valid
+    creator: "@rohit_ayadav",
     title: "Rohit Kumar Yadav - Portfolio",
     description: "Explore my projects, experience, and blog posts.",
     images: ["https://rohit.devblogger.in/profile.png"],
@@ -50,6 +59,9 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   robots: "index, follow",
+  alternates: {
+    canonical: "https://rohit.devblogger.in",
+  },
 };
 
 export default function RootLayout({

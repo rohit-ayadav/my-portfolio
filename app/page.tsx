@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { personalInfo } from '@/data/personalInfo';
+import { useTheme } from '@/providers/ThemeProvider';
+
 import Navbar from '@/components/layout/Navbar';
 import HeroSection from '@/components/sections/HeroSection';
 import SkillsSection from '@/components/sections/SkillsSection';
@@ -8,9 +11,7 @@ import ProjectsSection from '@/components/sections/ProjectsSection';
 import JourneySection from '@/components/sections/JourneySection';
 import AchievementsSection from '@/components/sections/AchievementsSection';
 import ContactSection from '@/components/sections/ContactSection';
-import { personalInfo } from '@/data/personalInfo';
 import Footer from '@/components/layout/Footer';
-import { useTheme } from '@/providers/ThemeProvider';
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -55,7 +56,7 @@ export default function Home() {
           <ProjectsSection />
           <JourneySection />
           <AchievementsSection />
-          <ContactSection personalInfo={personalInfo} />
+          <ContactSection />
         </main>
 
         <Footer />
