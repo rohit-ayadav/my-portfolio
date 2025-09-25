@@ -68,7 +68,7 @@ const ContactForm = () => {
             {/* <form onSubmit={handleSubmit}> */}
             <form onSubmit={handleFormSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
+                    <div title='Enter your full name'>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                             Your Name
                         </label>
@@ -80,11 +80,11 @@ const ContactForm = () => {
                             onChange={handleChange}
                             required
                             className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
-                            placeholder="Mr. Cooper"
+                            placeholder="Enter your full name"
                             autoComplete='name'
                         />
                     </div>
-                    <div>
+                    <div title='Enter your email address'>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                             Your Email
                         </label>
@@ -96,13 +96,13 @@ const ContactForm = () => {
                             onChange={handleChange}
                             required
                             className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
-                            placeholder="mr.cooper@devblogger.in"
+                            placeholder="e.g., mr.cooper@devblogger.in"
                             autoComplete='email'
                         />
                     </div>
                 </div>
 
-                <div className="mb-6">
+                <div className="mb-6" title='Enter the subject of your message'>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Subject
                     </label>
@@ -118,7 +118,7 @@ const ContactForm = () => {
                     />
                 </div>
 
-                <div className="mb-6">
+                <div className="mb-6" title='Write your message'>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Message
                     </label>
@@ -134,11 +134,11 @@ const ContactForm = () => {
                     ></textarea>
                 </div>
 
-                <div>
+                <div className="flex justify-end">
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className={`w-full md:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium rounded-lg transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 duration-300 flex items-center justify-center ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                        className={`w-full md:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium rounded-lg transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 duration-300 flex items-center justify-center ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ' cursor-pointer'
                             }`}
                     >
                         {isSubmitting ? (

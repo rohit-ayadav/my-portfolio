@@ -97,7 +97,7 @@ const HeroSection = ({ isLoaded, personalInfo }: HeroSectionProps) => {
                     animate={isLoaded ? { scale: 1, opacity: 1, rotate: [0, 5, 0] } : {}}
                     transition={{ duration: 0.7, delay: 0.5, ease: "easeInOut" }}
                 >
-                    <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-2xl hover:shadow-blue-600/50 dark:hover:shadow-blue-400/50 transition-shadow duration-300">
+                    <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-2xl hover:shadow-blue-600/50 dark:hover:shadow-blue-400/50 transition-shadow duration-300 select-none">
                         <Image
                             // src="/profile.jpg"
                             src={'/profile.png'}
