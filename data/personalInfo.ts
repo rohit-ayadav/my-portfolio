@@ -96,14 +96,14 @@ export const education: Education[] = [
 
 export const experience: Experience[] = [
     {
-        role: "Full Stack Developer Intern",
+        role: "Full Stack Developer",
         company: "Promptly AI Pvt Ltd",
         period: "Jun 2025 - Present",
         description: "Contributing to real-world product development in an agile environment using React.js, Node.js, PostgreSQL, REST APIs, and modern DevOps tools. Working under mentorship to build scalable frontend and backend modules, participating in code reviews, version control (Git), documentation, and sprint planning. Focused on clean code, performance optimization, and secure full-stack architecture.",
         technologies: ["React.js", "Node.js", "PostgreSQL", "REST APIs", "Git", "Agile", "DevOps"],
     },
     {
-        role: "Full Stack Developer Intern",
+        role: "Full Stack Developer",
         company: "Let's Code",
         period: "Jan 2025 - Jun 2025",
         description: "Worked on Let's Code website and multiple client projects, focusing on frontend and backend development. Built responsive and user-friendly interfaces, integrated APIs, and contributed to improving codebase performance.",
