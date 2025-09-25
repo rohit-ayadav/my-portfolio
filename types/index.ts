@@ -36,6 +36,7 @@ export interface PersonalInfo {
     phone: string;
     github: string;
     linkedin: string;
+    twitter?: string;
     resumeUrl: string;
     bio: string;
 }

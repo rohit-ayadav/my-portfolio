@@ -41,12 +41,16 @@ const Navbar = ({ activeSection }: NavbarProps) => {
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
-                    <Link
-                        href="#hero"
-                        className="text-2xl font-bold text-blue-600 dark:text-blue-400"
-                    >
-                        Rohit<span className="text-gray-800 dark:text-white">Dev</span>
-                    </Link>
+                    <div className="flex justify-between items-center">
+                        {/* Logo / Brand */}
+                        <Link
+                            href="#hero"
+                            className="text-2xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-500 transition-colors"
+                        >
+                            RohitKumar<span className="text-gray-800 dark:text-white">.dev</span>
+                        </Link>
+                    </div>
+
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-1">

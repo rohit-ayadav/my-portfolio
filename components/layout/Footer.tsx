@@ -1,15 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowUpIcon } from 'lucide-react';
+import { personalInfo } from '@/data/personalInfo';
 
 const Footer = () => {
-    const personalInfo = {
-        name: "Rohit Kumar Yadav",
-        role: "Full Stack Developer | Next.js Specialist",
-        email: "rohitkuyada@gmail.com",
-        github: "https://github.com/rohit-ayadav",
-        linkedin: "https://www.linkedin.com/in/rohitkumaryadav-rky/",
-    };
 
     const currentYear = new Date().getFullYear();
 
@@ -75,8 +69,12 @@ const Footer = () => {
                     >
                         <ArrowUpIcon className="h-6 w-6" />
                     </div>
-
-
+                    <div className="mt-6 text-center">
+                        <p className="mb-2 text-gray-300 cursor-pointer hover:underline"
+                            onClick={() => window.open('https://wa.me/916392177974?text=Hello%20Rohit,%20I%20am%20interested%20in%20purchasing%20your%20portfolio%20for%20$50.', '_blank')}>
+                            Want this portfolio for <span className="font-bold">$50</span>?
+                        </p>
+                    </div>
                 </div>
             </div>
         </footer>
